@@ -78,7 +78,7 @@ layout: default
     
     <div class="row">
       <div class="col-lg-12">
-        <h3 class="section-heading text-uppercase">What is AVQA task?</h3>
+        <h3 class="section-heading text-uppercase">What is AVIS task?</h3>
           <p  class="text-muted">
             Vision and hearing are our primary channels of communication and sensation. Audio-visual collaboration is beneficial for humans to better perceive and interpret the world. Humans have the ability to associate mixed sounds with object instances in complicated realistic scenarios. Imagine a cocktail-party scenario: when a group of people is speaking, we can not only locate the sound sources but also determine how many people are talking.
             Inspired by this human perception, we explore instance-level sound source localization in long videos and propose a new task, namely <b><font color="blue">audio-visual instance segmentation (AVIS), which It requests a model to simultaneously classify, segment and track sounding object instances—identify which objects are making sounds, infer where the sounding objects are, and monitor when they are making sounds</font></b>. This new task facilitates a wide range of practical applications, including embodied robotics, virtual reality, video surveillance, video editing, etc. Moreover, it can serve as a fundamental task for evaluating the comprehension capabilities of multi-modal large models.
@@ -91,10 +91,7 @@ layout: default
       <div class="col-md-12">
         <!-- <ul> -->
           <p class="text-muted">
-            <b>For instance</b>, as shown in this Figure, when answering the audio-visual question “<b>Which clarinet makes the sound first</b>” for this instrumental ensemble, it requires to locate sounding objects “<b>clarinet</b>” in the audio-visual scenario and focus on the “<b>first</b>” sounding “<b>clarinet</b>” in the timeline. To answer the question correctly, both effective audio-visual scene understanding and spatio-temporal reasoning are essentially desired.
-          </p>
-          <p class="text-muted">
-            Audio-visual question answering requires auditory and visual modalities for multimodal scene understanding and spatiotemporal reasoning. For example, when we encounter a complex musical performance scene involving multiple sounding and nonsounding instruments above, it is difficult to analyze the sound first term in the question by VQA model that only considers visual modality. While if we only consider the AQA model with mono sound, the left or right position is also hard to be recognized. However, we can see that using both auditory and visual modalities can answer this question effortlessly.
+            Audio-visual instance segmentation is related to several existing tasks. For example, audio-visual object segmentation (AVOS) is to separate sounding objects from the background region of a given audible video, as shown in Figure \ref{fig_intro} (a). Unlike AVOS being tasked with binary foreground segmentation, audio-visual semantic segmentation (AVSS) aims at predicting semantic maps that assign each pixel with a specific category. To accomplish the above tasks, many works extend the image segmentation frameworks to the video domain, and design various audio-visual fusion modules for sound source localization. Despite promising performance in the AVSBench dataset, current methods still suffer from two limitations in real-world scenarios. First, these methods fail to differentiate two sounding objects with the same category, such as the woman, man, left ukulele and right ukulele depicted. Second, these methods focus on 5- or 10-second trimmed short videos and ignore long-range modeling abilities, which may lead to weak performance in real world.
           </p>
         <!-- </ul> -->
       </div>
@@ -104,14 +101,11 @@ layout: default
 
     <div class="row">
       <div class="col-lg-12">
-        <h3 class="section-heading text-uppercase">What is MUSIC-AVQA dataset?</h3>
+        <h3 class="section-heading text-uppercase">What is AVISeg dataset?</h3>
         <!-- <h5 class="text-muted" style="text-align:left;"> -->
           <!-- <ul> -->
             <p class="text-muted">
-              To explore scene understanding and spatio-temporal reasoning over audio and visual modalities, we build a largescale audio-visual dataset, MUSIC-AVQA, which focuses on question-answering task. As noted above, high-quality datasets are of considerable value for AVQA research.
-            </p>
-            <p class="text-muted">
-              <b>Why musical performance? </b>Considering that musical performance is a typical multimodal scene consisting of abundant audio and visual components as well as their interaction, it is appropriate to be utilized for the exploration of effective audio-visual scene understanding and reasoning.
+              One potential reason that the AVIS task is rarely studied is the absence of a high-quality dataset. Despite the existence of audio-visual segmentation datasets, none are directly applicable to our proposed task, due to lacking instance-level annotations and long-form videos. To explore audio-visual instance segmentation and evaluate the proposed methods, we create a new large-scale benchmark called AVISeg.
             </p>
 
           <!-- </ul> -->
@@ -125,21 +119,17 @@ layout: default
       <!-- news column -->
       <div class="col-md-4">
         <h4 class="service-heading">Basic informations</h4>
-        <p class="text-muted">We choose to manually collect amounts of musical performance videos from YouTube. Specifically, 22 kinds of instruments, such as guitar, cello, and xylophone, are selected and 9 audio-visual question types are accordingly designed, which cover three different scenarios, i.e., audio, visual and audio-visual. Annotations are collected using a novel by our GSAI-Labeled system.</p>
+        <p class="text-muted">Considering that this task involves complex audio-visual interactions and requires high-quality data, we manually collect and choose 926 videos from YouTube and the publicly available MUSIC-AVQA dataset. Our released AVISeg dataset satisfies the following criteria: 1) It focuses on long-term videos, bringing them much closer to real applications. 2) It contains 26 common sound categories, spanning 4 dynamic scenarios: Music, Speaking, Machine and Animal. 3) It involves some challenging cases, such as videos with silent sound sources, single sound source, and multiple sources simultaneously. These attributes impose higher demands on the model for accurate recognition, segmentation, and tracking of sounding objects.</p>
 
       </div>
       <!-- characteristics column -->
       <div class="col-md-4">
         <h4 class="service-heading">Characteristics</h4>
         <ul class="text-muted">
-          <li class="text-muted">3 typical multimodal scene</li>
-          <li class="text-muted">22 kinds of instruments</li>
-          <li class="text-muted">4 categories: String, Wind, Percussion and Keyboard.</li>
-          <li class="text-muted"><b>9,290</b> videos for over <b>150</b> hours</li>
-          <li class="text-muted">7,423 real videos</li>
-          <li class="text-muted">1,867 synthetic videos</li>
-          <li class="text-muted">9 audio-visual question types</li>
-          <li class="text-muted"><b>45,867</b> question-answer pairs</li>
+          <li class="text-muted"><b>4</b> typical scenes</li>
+          <li class="text-muted"><b>26</b> categories</li>
+          <li class="text-muted"><b>926</b> long videos</li>
+          <li class="text-muted"><b>61.4</b> seconds for each video</li>
           <li class="text-muted">Diversity, complexity and dynamic</li>
         </ul>
       </div>
@@ -148,7 +138,7 @@ layout: default
       <div class="col-md-4">
         <h4 class="service-heading">Personal data/Human subjects</h4>
         <!-- <ul class="text-muted"> -->
-          <p class="text-muted">Videos in MUSIC-AVQA are public on YouTube, and annotated via crowdsourcing. We have explained how the data would be used to crowdworkers. Our dataset does not contain personally identifiable information or offensive content.</p>
+          <p class="text-muted">Videos in AVISeg are public on YouTube, and annotated via crowdsourcing. Our dataset does not contain personally identifiable information or offensive content.</p>
         <!-- </ul> -->
       </div>
     </div>
