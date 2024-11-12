@@ -91,6 +91,9 @@ layout: default
       <div class="col-md-12">
         <!-- <ul> -->
           <p class="text-muted">
+            Comparison of different audio-visual segmentation tasks. (a) Audio-Visual Object Segmentation (AVOS) only requires binary segmentation. (b) Audio-Visual Semantic Segmentation (AVSS) associates one category with every pixel. (c) Audio-Visual Instance Segmentation (AVIS) treats each sounding object of the same class as an individual instance.
+          </p>
+          <p class="text-muted">
             Audio-visual instance segmentation is related to several existing tasks. For example, audio-visual object segmentation (AVOS) is to separate sounding objects from the background region of a given audible video, as shown in Figure \ref{fig_intro} (a). Unlike AVOS being tasked with binary foreground segmentation, audio-visual semantic segmentation (AVSS) aims at predicting semantic maps that assign each pixel with a specific category. To accomplish the above tasks, many works extend the image segmentation frameworks to the video domain, and design various audio-visual fusion modules for sound source localization. Despite promising performance in the AVSBench dataset, current methods still suffer from two limitations in real-world scenarios. First, these methods fail to differentiate two sounding objects with the same category, such as the woman, man, left ukulele and right ukulele depicted. Second, these methods focus on 5- or 10-second trimmed short videos and ignore long-range modeling abilities, which may lead to weak performance in real world.
           </p>
         <!-- </ul> -->
@@ -119,7 +122,7 @@ layout: default
       <!-- news column -->
       <div class="col-md-4">
         <h4 class="service-heading">Basic informations</h4>
-        <p class="text-muted">Our released AVISeg dataset satisfies the following criteria: 1) It focuses on long-term videos, bringing them much closer to real applications. 2) It contains 26 common sound categories, spanning 4 dynamic scenarios: Music, Speaking, Machine and Animal. 3) It involves some challenging cases, such as videos with silent sound sources, single sound source, and multiple sources simultaneously.</p>
+        <p class="text-muted">Our released AVISeg dataset satisfies the following criteria: 1) It focuses on long-term videos, bringing them much closer to real applications. 2) It contains 26 common sound categories, spanning 4 dynamic scenarios: Music, Speaking, Machine and Animal. 3) It involves some challenging cases, such as videos with silent sound sources, single sound source, and multiple sources.</p>
 
       </div>
       <!-- characteristics column -->
@@ -129,7 +132,7 @@ layout: default
           <li class="text-muted"><b>4</b> typical scenes</li>
           <li class="text-muted"><b>26</b> categories</li>
           <li class="text-muted"><b>926</b> long videos</li>
-          <li class="text-muted"><b>~61.4</b> seconds for each video</li>
+          <li class="text-muted"><b>61.4</b> seconds for each video</li>
           <li class="text-muted">Diversity, complexity and dynamic</li>
         </ul>
       </div>
@@ -166,7 +169,7 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">MUSIC-AVQA Dataset</h2>
+        <h2 class="section-heading text-uppercase">AVISeg Dataset</h2>
         <h3 class="section-subheading text-muted">Some graphical representations of our dataset and annotations</h3>
       </div>
     </div>
@@ -176,9 +179,9 @@ layout: default
       
     <div class="row justify-content-md-center text-center">
       <div class="col-md centered" style="padding:1rem;">
-        <img src="{{ site.baseurl }}/static/img/stats-figures/stat1.png" style="width: 100%" class="img-responsive"/> 
+        <img src="{{ site.baseurl }}/static/img/stats-figures/sta.png" style="width: 100%" class="img-responsive"/>
       </div>
-      <p class="text-muted" style="text-align:left"><b>Illustrations of our MUSIC-AVQA dataset statistics</b>. <b>(a-d)</b> statistical analysis of the videos and QA pairs. <b>(e)</b> Question formulas. <b>(f)</b> Distribution of question templates, where the dark color indicates the number of QA pairs generated from real videos while the light-colored area on the upper part of each bar means that from synthetic videos. <b>(g)</b> Distribution of first n-grams in questions. Our QA-pairs need <b>fine-grained scene understanding</b> and <b>spatio-temporal reasoning</b> over audio and visual modalities to be solved. For example, existential and location questions require spatial reasoning, and temporal questions require temporal reasoning. Best viewed in color.</p>
+      <p class="text-muted" style="text-align:left"><b>Illustrations of our AVISeg dataset statistics.</b>. (a) Ratio of different sound sources. (b) Number of video in 4 real-world scenarios. (c) Distribution of video lengths. (d) Number of video and objects for the 26 categories. (e) Relations between different categories.</p>
     </div>
 
 
