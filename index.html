@@ -83,7 +83,7 @@ layout: default
             Vision and hearing are our primary channels of communication and sensation. Audio-visual collaboration is beneficial for humans to better perceive and interpret the world. Humans have the ability to associate mixed sounds with object instances in complicated realistic scenarios. Imagine a cocktail-party scenario: when a group of people is speaking, we can not only locate the sound sources but also determine how many people are talking.
             Inspired by this human perception, we explore instance-level sound source localization in long videos and propose a new task, namely <b><font color="blue">audio-visual instance segmentation (AVIS), which It requests a model to simultaneously classify, segment and track sounding object instances—identify which objects are making sounds, infer where the sounding objects are, and monitor when they are making sounds</font></b>. This new task facilitates a wide range of practical applications, including embodied robotics, virtual reality, video surveillance, video editing, etc. Moreover, it can serve as a fundamental task for evaluating the comprehension capabilities of multi-modal large models.
           </p>
-          <center><img src="{{ site.baseurl }}/static/img/avis/teaser.png" alt="" style="width:70%;  margin-top:8px; margin-bottom:15px;"></center>
+          <center><img src="{{ site.baseurl }}/static/img/avis/teaser.png" alt="" style="width:100%;  margin-top:8px; margin-bottom:15px;"></center>
       </div>
     </div>
 
@@ -183,135 +183,7 @@ layout: default
       </div>
       <p class="text-muted" style="text-align:left"><b>Illustrations of our AVISeg dataset statistics.</b>. (a) Ratio of different sound sources. (b) Number of video in 4 real-world scenarios. (c) Distribution of video lengths. (d) Number of video and objects for the 26 categories. (e) Relations between different categories.</p>
     </div>
-
-
-    <!-- <div class="row justify-content-md-center text-center">
-      <div class="col-md centered" style="padding:1rem;">
-        <img src="{{ site.baseurl }}/static/img/stats-figures/matrix.png" style="width: 100%" class="img-responsive"/> 
-      </div>
-      <p class="text-muted" style="text-align:left"><b>Left: </b>Number of combinations of different types of instruments, where the lighter the color, the more the number. And instruments outside the 22 instrument categories are denoted by other. The confusion matrix shows that the combination of different instruments is diversified. <b>Right-top: </b> According to Wikipedia, 22 kinds of instruments are divided into 4 categories: <i>String, Wind, Percussion</i> and <i>Keyboard</i>. <b>Right-bottom: </b>9 question types in different scenarios.</p>
-    </div> -->
-
-
-    <div class="row justify-content-md-center text-center">
-      <div class="col-md centered" style="padding:1rem;">
-        <img src="{{ site.baseurl }}/static/img/stats-figures/comp_others.png" style="width: 100%" class="img-responsive"/> 
-      </div>
-      <p class="text-muted" style="text-align:left">
-        <b>Comparison with other video QA datasets</b>. Our MUSIC-AVQA dataset focuses on the interaction between visual objects and their produced sounds, offering QA pairs that covering audio questions, visual questions and audio-visual questions, which is more comprehensive than other datasets. The collected videos in MUSIC-AVQA can facilitate <b>audio-visual understanding in terms of spatial and temporal associations</b>.
-      </p>
-    </div>
-
-    <br/>
-
-
-    <div class="row justify-content-md-center text-center">
-      <div class="col-md-12" style="text-align:left">
-        <h4 class="section-subheading" id="downloadFiles" style="text-align:left; margin-left:-14px">How was MUSIC-AVQA dataset made?</h4>
-      </div>
-      <hr/>
-      <p class="text-muted" style="text-align:left">
-        We design an audio-visual question answering labeling system to collect questions, and all QA pairs are collected with this system. The flow chart of the labeling system is shown in below figure.
-      </p>
-      <center>
-        <img src="{{ site.baseurl }}/static/img/stats-figures/annotation_framework.png" alt="" style="width:88%;  margin-top:10px; margin-bottom:10px;"> 
-      </center>
-      <p class="text-muted" style="text-align:left">
-        Labeling system contains <b>questioning</b> and <b>answering</b>. In the questioning section, the annotator is required to select the performance type of the video and the included instruments, and then scene types, question types, and question templates, and finally one question is automatically generated based on the previous selection. In the answering part, the annotator to judge whether the question is reasonable, and if it is unreasonable, the question will be labeled again. Then, the annotator answering the question according to video content, and finally one QA pair is produced.
-      </p>
-    </div>
-
-    <br/>
-
-
-    <div class="row justify-content-md-center text-center">
-      <div class="col-md-12" style="text-align:left">
-        <h4 class="section-subheading" style="text-align:left; margin-left:-14px">QA pairs samples</h4>
-      </div>
-      <hr/>
-      <p class="text-muted" style="text-align:left">
-        <b>Demo.</b> The large-scale spatial-temporal audio-visual dataset that focuses on question-answering task, as shown in below figure that different audio-visual scene types and their annotated QA pairs in the AVQA dataset.
-      </p>
-
-      <hr/>
-
-      <div class="col-md centered" style="padding:0.3rem;">
-        <img src="{{ site.baseurl }}/static/img/stats-figures/st_avqa_pairs.png" style="width: 100%" class="img-responsive"/> 
-      </div>
-      <p class="text-muted", style="text-align:left">
-        In the first row, <b>a)</b>, <b>b)</b>, and <b>c)</b> represent real musical performance videos, namely solo, ensemble of the same instrument, and ensemble of different instruments. In the second row, <b>d)</b>, <b>e)</b>, and <b>f)</b> represent the synthetic video, which are audio and video random matching, audio overlay, and video stitching, respectively.
-      </p>
-    </div>
-
-
-    <div class="row justify-content-md-center text-center">
-      <div class="col-md-12" style="text-align:left">
-        <h4 class="section-subheading" style="text-align:left; margin-left:-14px">More video examples</h4>
-      </div>
-      <hr/>
-      <p class="text-muted" style="text-align:left">
-        Some video examples with QA pairs in the MUSIC-AVQA dataset. 
-        Through these examples, we can have a better understanding of the dataset, and can more intuitively feel the QA tasks in dynamic and complex audio-visual scenes
-      </p>
-      <p class="text-muted" style="text-align:left; margin-right: 10px;">
- 
-        <!-- example 1 -->
-        <table>
-          <tr>
-            <td style="width:1%"></td>
-            <td style="width:31%">
-              <video width="100%" controls="controls">
-                <source src="{{ site.baseurl }}/static/videos/music_avqa_example1.mp4" align="left" type="video/mp4">
-              </video>
-            </td>
-            <td style="width:1%"></td>
-            <td style="width: 67%; text-align:left; padding:0.2rem" class="text-muted">
-              <b>Question</b>: How many instruments are sounding in the video? <br>
-              <b>Answer</b>: two <br>
-              To answer the question, an AVQA model needs to first identify objects and sound sources in the video, and then count all sounding objects. Although there are three different sound sources in the audio modality, only two of them are visible. Rather than simply counting all audio and visual instances, exploiting audio-visual association is important for AVQA.
-            </td>
-          </tr>
-        </table>
-
-        <!-- example 2 -->
-        <table>
-          <tr>
-            <td style="width:1%"></td>
-            <td style="width:31%">
-              <video width="100%" controls="controls">
-                <source src="{{ site.baseurl }}/static/videos/music_avqa_example2.mp4" align="left" type="video/mp4">
-              </video>
-            </td>
-            <td style="width:1%"></td>
-            <td style="width: 67%; text-align:left; padding:0.2rem" class="text-muted">
-              <b>Question</b>: What is the first sounding instrument? <br>
-              <b>Answer</b>: piano <br>
-              To answer the question, an AVQA model needs to not only associate all instruments and their corresponding sounds in the video, but also identify the first instrument that makes sounds. Thus, the AVQA task is not a simple recognition problem, and it also involves <font color="orange"><b>audio-visual association</b></font> and <font color="orange"><b>temporal reasoning</b></font>. 
-
-            </td>
-          </tr>
-        </table>
-
-        <!-- example 3 -->
-        <table>
-          <tr>
-            <td style="width:1%"></td>
-            <td style="width:31%">
-              <video width="100%" controls="controls">
-                <source src="{{ site.baseurl }}/static/videos/music_avqa_example3.mp4" align="left" type="video/mp4">
-              </video>
-            </td>
-            <td style="width:1%"></td>
-            <td style="width: 67%; text-align:left; padding:0.2rem" class="text-muted">
-              <b>Question</b>: What is the left instrument of the second sounding instrument? <br>
-              <b>Answer</b>: guzheng <br>
-              To answer the question, an AVQA model needs to first identify the second sounding instrument: flute and then infer the instrument at its left. Besides recognizing objects, exploring audio-visual association, and performing temporal reasoning, <font color="orange"><b>spatial reasoning</b></font> is also crucial for AVQA.
-            </td>
-          </tr>
-        </table>
-
-        
-      </p>
+    
 
     </div>
 
