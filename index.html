@@ -350,18 +350,17 @@ layout: default
       <div class="col-md-12">
         <h4 class="subheading">Experiments</h4>
         <p class="text-muted" style="text-align:left">
-          To study different input modalities and validate the effectiveness of the proposed model, we conduct extensive ablations of our model and compare to recent QA approaches. 
+          To study different input modalities and validate the effectiveness of the proposed model, we conduct extensive ablations of our model and compare to recent approaches.
         </p>
         <p class="text-muted" style="text-align:left; margin-right: 10px;">
-          <img src="{{ site.baseurl }}/static/img/experiments/exp2.png" align="right" width="40%" class="img-responsive"/> As shown in <b>right table</b>, we observe that leveraging audio, visual, and question information can boost AVQA task.
-          The <b>below table</b> shows that audio-visual video questiFon answering results of different methods on the test set of MUSIC-AVQA. And the top-2 results are highlighted.
+          <img src="{{ site.baseurl }}/static/img/experiments/re1.png" align="right" width="40%" class="img-responsive"/> Zero-shot results of different multi-modal large models for audio-referred visual grounding on the AVISeg test set.
         </p>
 
         <div class="col-md centered" style="padding:0.6rem; text-align:center">
-        <img src="{{ site.baseurl }}/static/img/experiments/exp1.png" style="width: 100%;" class="img-responsive"/> 
+        <img src="{{ site.baseurl }}/static/img/experiments/re2.png" style="width: 100%;" class="img-responsive"/>
         </div>
         <p class="text-muted" style="text-align:left">
-          The results <b>firstly</b> demonstrate that all AVQA methods outperform A-, V- and VideoQA methods, which indicates that AVQA task can be boosted through multisensory perception. <b>Secondly</b>, our method achieves considerable improvement on most audio and visual questions. For the audio-visual question that desires spatial and temporal reasoning, our method is clearly superior over other methods on most question types, especially on answering the <i>Counting</i> and <i>Location</i> questions. <b>Moreover</b>, the results confirm the potential of our dataset as a testbed for audio-visual scene understanding.
+          Quantitative evaluation of different models from related tasks on the AVISeg test set. The best results are highlighted in bold.
         </p>
       </div>
     </div>
@@ -374,7 +373,7 @@ layout: default
         <h4 class="subheading">Visualized spatio-temporal grounding results</h4>
         <p class="text-muted" style="text-align:left">We provide several visualized spatial grounding results. The heatmap indicates the location of sounding source. Through the spatial grounding results, the sounding objects are visually captured, which can facilitate the spatial reasoning.</p>
         <div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
-        <img src="{{ site.baseurl }}/static/img/experiments/visualize1.png" style="width: 100%;" class="img-responsive"/> 
+        <img src="{{ site.baseurl }}/static/img/experiments/vi1.png" style="width: 100%;" class="img-responsive"/>
         </div>
         <p class="text-muted" style="text-align:left"><b>Visualized spatio-temporal grounding results</b>. Based on the grounding results of our method, the sounding area and key timestamps are accordingly highlighted in spatial and temporal perspectives <b>(a-e)</b>, respectively, which indicates that our method can model the spatio-temporal association over different modalities well, facilitating the scene understanding and reasoning. Besides, the subfigure <b>(f)</b> shows one failure case predicted by our method, where the complex scenario with multiple sounding and silent objects makes it difficult to correlate individual objects with mixed sound, leading to a wrong answer for the given question.</p>
       </div>
