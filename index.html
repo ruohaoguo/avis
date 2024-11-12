@@ -325,30 +325,21 @@ layout: default
     
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2 class="section-heading text-uppercase">A Simple Baseline for MUSIC-AVQA</h2>
-        <!-- <h3 class="section-subheading text-muted">Challenge Details with links to &#9733;NEW&#9733; Codalab Leaderboards</h3> -->
-        <h3 class="section-subheading text-muted">Audio-visual spatial-temporal MUSIC-AVQA method, experimental results and simple analysis</h3>
+        <h2 class="section-heading text-uppercase">A Simple Baseline for AVISeg</h2>
+        <h3 class="section-subheading text-muted">Audio-visual instance segmentation method, experimental results and simple analysis</h3>
       </div>
     </div>
-     
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-muted" style="text-align:left">
-          To solve the AVQA problem, we propose a spatio-temporal grounding model to achieve scene understanding and reasoning over audio and visual modalities. And to benchmark different models, we use answer prediction accuracy as the evaluation metric and evaluate performance of different models on answering different types of audio, visual, and audio-visual questions. <b>More details in the <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA.pdf">[Paper]</a> and <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA-supp.pdf">[Supplementary]</a></b>.<br/>  
-        </p> 
-      </div>
-    </div>
+
     
 
     <div class="row">
       <div class="col-md-12">
-        <h4 class="subheading">Spatio-temporal Grounding Model</h4>
-        <p class="text-muted" style="text-align:left">An overview of the proposed framework is illustrated in below figure. We consider that the sound and the location of its visual source usually reflects the spatial association between audio and visual modality, the <b>spatial grounding module</b>, which performs attention-based sound source localization, is therefore introduced to decompose the complex scenarios into concrete audio-visual association. To highlight the key timestamps that are closely associated to the question, we propose a <b>temporal grounding module</b>, which is designed for attending critical temporal segments among the changing audio-visual scenes and capturing question-aware audio and visual embeddings.</p>
+        <p class="text-muted" style="text-align:left">We introduce a new baseline model, termed AVISM, for the audio-visual instance segmentation task. The proposed AVISM model, built upon Mask2Former and VITA, adopts a query-based Transformer architecture to learn a set of query vectors representing sounding objects for the instance segmentation and tracking. To better model audio-visual semantic correlations in long and complicated videos, we present the frame-level audio-visual fusion module and video-level audio-visual fusion module to integrate audio and visual features.</p>
         
         <div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
-        <img src="{{ site.baseurl }}/static/img/experiments/framework_pipeline_long.png" style="width: 100%;" class="img-responsive"/> 
+        <img src="{{ site.baseurl }}/static/img/experiments/model.png" style="width: 100%;" class="img-responsive"/>
         </div>
-        <p class="text-muted" style="text-align:left">The <b>proposed audio-visual question answering model</b> takes pre-trained CNNs to extract audio and visual features and uses a LSTM to obtain a question embedding. We associate specific visual locations with the input sounds to perform spatial grounding, based on which audio and visual features of key timestamps are further highlighted via question query for temporal grounding. Finally, multimodal fusion is exploited to integrate audio, visual, and question information for predicting the answer to the input question. </p>
+        <p class="text-muted" style="text-align:left"><b>Overview of the proposed AVISM for audio-visual instance segmentation.</b> (a) The frame-level sound source localizer segments sounding objects within each frame independently and condenses dense image features into frame queries. (b) The video-level sounding object tracker takes frame queries and audio features as input, and then performs temporal audio-visual communications between frames.</p>
       </div>
     </div>
 
