@@ -370,7 +370,10 @@ layout: default
 
     <div class="row">
       <div class="col-md-12">
-        <h4 class="subheading">Visualized spatio-temporal grounding results</h4>
+        <h4 class="subheading">Visualized audio-visual instance segmentation results</h4>
+        <p class="text-muted" style="text-align:left">
+          Our AVISM model accurately localize the sounding object across both spatial and temporal dimensions, e.g., ``lion'' in video (d). In complex scenes with multiple sound sources, our model enables to handle the numerous mixed semantics, e.g., ``person'' and ``ukulele'' in video (a). When an object begins producing sound in the intermediate frames, AVISM is able to segment it and assign a new identity, as evidenced in video (b). This case also shows the effectiveness of our model in identifying and distinguishing objects with similar appearances or sounds. Moreover, if a sounding object disappears and reoccurs, the AVISM still correctly tracks it, e.g., ``tree harvester'' in video (c).
+        </p>
         <div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
         <img src="{{ site.baseurl }}/static/img/experiments/vi1.png" style="width: 100%;" class="img-responsive"/>
         </div>
